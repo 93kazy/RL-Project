@@ -1,0 +1,25 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Training artefacts and logs
+logs/
+training_logs/
+*.monitor.csv
+runs/
+
+# Keep the released model (models/DQN_assault.zip) but ignore checkpoints
+models/checkpoints/
+models/*.tmp
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp

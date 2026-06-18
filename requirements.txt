@@ -1,0 +1,14 @@
+# Core RL stack (versions used to train the bundled model)
+gymnasium==1.2.3
+ale-py>=0.10.1
+stable-baselines3[extra]==2.7.1
+
+# Deep learning backend.
+# For CUDA builds install the matching wheel from https://pytorch.org
+# e.g. pip install torch==2.9.0 --index-url https://download.pytorch.org/whl/cu128
+torch==2.9.0
+
+numpy==2.0.2
+
+# Plotting (only needed for evaluate.py --plot)
+matplotlib>=3.8
