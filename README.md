@@ -5,6 +5,8 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.9-red)
 ![Gymnasium](https://img.shields.io/badge/Gymnasium-1.2.3-green)
 
+> **Academic project** — This repository was developed as part of the Reinforcement Learning course at [Université Paris Dauphine – PSL](https://www.dauphine.psl.eu/) during the 2025-2026 academic year. The goal was to apply deep reinforcement learning concepts covered in class to a concrete problem: training an agent to play an Atari game from raw pixels, from algorithm selection and hyperparameter search through to evaluation.
+
 A reinforcement-learning agent that learns to play the Atari 2600 game
 **Assault** from raw pixels, using a **Deep Q-Network (DQN)** trained with
 [Stable-Baselines3](https://stable-baselines3.readthedocs.io/).
@@ -108,64 +110,6 @@ RL-Project/
     └── evaluate.py          # Evaluation entry point
 ```
 
-## Installation
-
-Requires **Python 3.12**.
-
-```bash
-# Clone the repository
-git clone https://github.com/93kazy/RL-Project.git
-cd RL-Project
-
-# Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-The Atari ROMs ship with `ale-py`, so no separate ROM download is required.
-For GPU training, install the CUDA build of PyTorch that matches your system
-from the [official instructions](https://pytorch.org/get-started/locally/).
-
-## Usage
-
-### Evaluate the trained agent
-
-Play 20 games with the bundled model and print summary statistics:
-
-```bash
-python src/evaluate.py
-```
-
-Watch the agent play in a window:
-
-```bash
-python src/evaluate.py --render --episodes 5
-```
-
-### Train from scratch
-
-Reproduce the final model with the default hyper-parameters:
-
-```bash
-python src/train.py
-```
-
-Both scripts expose their options through `--help`. A few common ones:
-
-```bash
-python src/train.py --timesteps 500000 --seed 0
-python src/evaluate.py --model-path models/DQN_assault --episodes 20 --plot assets/eval.png
-```
-
-Training logs are written under `logs/` and can be inspected with TensorBoard:
-
-```bash
-tensorboard --logdir logs/tensorboard
-```
-
 ## Hyperparameters
 
 The final configuration (stored in `models/DQN_assault.zip`):
@@ -221,15 +165,3 @@ behaviour and was selected.
   **Prioritized Experience Replay**, or a distributional / Rainbow variant.
 - Running several seeds would give confidence intervals rather than a single
   point estimate.
-
-## References
-
-- Mnih et al., *Human-level control through deep reinforcement learning*,
-  Nature, 2015.
-- [Stable-Baselines3 documentation](https://stable-baselines3.readthedocs.io/)
-- [Gymnasium / Arcade Learning Environment](https://ale.farama.org/)
-
-## Author
-
-**Tomil Shi** — Université Paris Dauphine – PSL, 2025–2026
-Reinforcement Learning course project.
