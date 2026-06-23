@@ -5,7 +5,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.9-red)
 ![Gymnasium](https://img.shields.io/badge/Gymnasium-1.2.3-green)
 
-> **Academic project** — This repository was developed as part of the Reinforcement Learning course at [Université Paris Dauphine – PSL](https://www.dauphine.psl.eu/) during the 2025-2026 academic year. The goal was to apply deep reinforcement learning concepts covered in class to a concrete problem: training an agent to play an Atari game from raw pixels, from algorithm selection and hyperparameter search through to evaluation.
+> **Academic project** : This repository was developed as part of the Reinforcement Learning course at [Université Paris Dauphine-PSL](https://www.dauphine.psl.eu/) during the 2025-2026 academic year. The goal was to apply deep reinforcement learning concepts covered in class to a concrete problem: training an agent to play an Atari game from raw pixels, from algorithm selection and hyperparameter search through to evaluation.
 
 A reinforcement-learning agent that learns to play the Atari 2600 game
 **Assault** from raw pixels, using a **Deep Q-Network (DQN)** trained with
@@ -22,7 +22,7 @@ A reinforcement-learning agent that learns to play the Atari 2600 game
 In *Assault*, the player controls a ship anchored at the bottom of the screen.
 A mother-ship at the top continuously deploys smaller enemies and fires at the
 player. The agent must **dodge incoming fire while destroying the deployed
-enemies**, which requires anticipating projectile trajectories — a good fit for
+enemies**, which requires anticipating projectile trajectories, a good fit for
 a learning-based controller.
 
 The agent observes only the game screen (a stack of pixel frames) and chooses
@@ -40,7 +40,7 @@ The choice of algorithm follows directly from the structure of the problem:
   Q-table with a convolutional neural network that generalises across visually
   similar states.
 - **Small discrete action space.** With only 7 actions, the network can output
-  one Q-value per action and simply pick the maximum — exactly the setting DQN
+  one Q-value per action and simply pick the maximum, exactly the setting DQN
   is designed for.
 - **Correlated consecutive frames.** Successive frames are nearly identical, so
   training online on consecutive transitions biases the agent and causes it to
